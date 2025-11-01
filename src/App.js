@@ -1,5 +1,5 @@
 import './App.css';
-import FeedbackColector from './FeedbackColector/FeedbackColector';
+import FeedbackColector from './Componenets/FeedbackColector';
 
 function App() {
   return (
