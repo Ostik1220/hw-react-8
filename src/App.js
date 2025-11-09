@@ -1,12 +1,15 @@
 import './App.css';
-import FeedbackColector from './Componenets/FeedbackColector';
+import Section from './Componenets/Section';
+import { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <FeedbackColector />
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Section title="Please leave feedback"/>
+      </div>
+    );
+  }
 }
 
 export default App;

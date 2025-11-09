@@ -1,7 +1,7 @@
 import { Component } from "react";
 import Statistics from "./Statistics";
 
-class FeedbackColector extends Component {
+class FeedbackOption extends Component {
 
     state = {
         good: 0,
@@ -28,13 +28,20 @@ class FeedbackColector extends Component {
     }
 
   render() {
-    return(<div>
-                <h1>Please leave feedback</h1>
+    if (this.state.good === 0 && this.state.neutral === 0 && this.state.bad === 0) {
+        return(<div>
+        <button onClick={this.goodBtn}>Good</button>
+        <button onClick={this.neutralBtn}>Neutral</button>  
+        <button onClick={this.badBtn}>Bad</button>
+        <h2>No feedback given</h2>
+        </div>);
+    }
+       return(<div>
         <button onClick={this.goodBtn}>Good</button>
         <button onClick={this.neutralBtn}>Neutral</button>
         <button onClick={this.badBtn}>Bad</button>
-        <Statistics good={this.state.good} bad={this.state.bad} natural={this.state.neutral}/>
+        <Statistics good={this.state.good} bad={this.state.bad} neutral={this.state.neutral}/>
         </div>);
   }     
 }
-export default FeedbackColector;
+export default FeedbackOption;
